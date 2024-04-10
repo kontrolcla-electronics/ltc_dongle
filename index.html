@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ltc Dongle Updater</title>
+    <style>
+    :root {
+      --dark: #6c757d;
+      --modal-duration: 1s;
+      --modal-color: #F33;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: "Segoe UI","Helvetica Neue",Arial,"Noto Sans",sans-serif;
+      line-height: 1.6;
+      background-color: #F5F5F5;
+      font-weight: 500;
+    }
+    h3{
+      font-size: 1.25rem;
+      font-weight: 500;
+      text-align: center;
+    }
+    .ct{
+      width: 1350px;
+      margin: 0 auto;
+      display: grid;
+      align-items: center;
+      height: 600px;
+    }
+    ul {
+      display: flex;
+      list-style: none;
+    }
+    .nav {
+      background-color:var(--dark);
+      color:#fff;
+      padding: 0.7rem 1.2rem;
+      width: 1354px;
+      margin: 15px 0 0 0 ;
+      outline: none;
+      border-radius: 5px;
+      justify-content: space-between;
+      display: flex;
+    } 
+    .file{
+      text-align: center;
+      color: #444;
+      margin: 21% auto;
+      width: 50%;
+      height: 200px;
+    }
+    .btn{
+      width: 200px;
+      height: 36px;
+      border-radius: 3px;
+      margin: 10px 0 5px 0;
+      font-size: 16px;
+      background-color: #F5F5F5;
+      color: var(--dark);
+      border: 2px solid var(--dark);
+      box-shadow: 0 1px 6px rgba(120, 120, 120, 0.5);
+    }
+    .btn:hover{
+      color: white;
+      background: var(--dark);
+    }
+    .btn_grey{
+      border: 2px solid var(--dark);
+    }
+    .btn_grey:hover{
+      background: var(--dark);
+    }
+    .modal {
+      display: block;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+    .modal-content {
+      margin: 16% auto;
+      width: 25%;
+      height: 220px;
+      box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.4), 0 7px 20px 0 rgba(0, 0, 0, 0.4);
+      animation-name: modalopen;
+      animation-duration: var(--modal-duration);
+      background: var(--modal-color);
+      padding: 45px 25px;
+      color: #fff;
+      text-align: center;
+    }
+    </style>
+    
+</head>
+<body>
+  <div class="ct" id="ct_id" style="display:none;"> 
+    <nav class="nav">
+      <ul>
+        <h3>Ltc Dongle Updater</h3>
+      </ul>
+    </nav>
+    <div class="file">
+      <h3 id="txt">Load Firmware</h3>
+      <button type="button" class="btn" onclick='bt()' id="bt">Browse Bin File</button>
+      <input type='file' onchange='oC()' id="fn" style="display:none"><br>
+      <h3 id="txt_2"></h3>
+    </div>
+  </div>
+  <!--------------------------------------------------------------->
+  <!--MODAL-->
+  <div class="modal" style="display:none;">
+    <div class="modal-content">
+      <h2 id="txt_modal">Go To Update Mode</h2>
+      <button type="button" class="btn btn_grey" style="margin-top: 16px" id="connect">Connect</button>
+      <h3 style="color:#DDD">no serial connection</h3>
+    </div>
+  </div>
+  <!--MODAL WAIT-->
+  <div class="modal" style="display:none;">
+    <h1 class="modal-content" style="padding: 83px 25px">Wait...</h1>
+  </div>
+  <!--------------------------------------------------------------->
+  <script src="script.js"></script>
+  <script src="updater.js"></script>
+</body>
+</html>
