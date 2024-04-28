@@ -125,7 +125,7 @@ connect.addEventListener('pointerdown', () => {
     }
     else if ( txt_modal.innerText == "Go To Update Mode" )
     {   window.setTimeout( send_format_timecode_string, 1000 );
-        window.setTimeout( send_goto_updater, 3000 );
+        window.setTimeout( send_goto_updater, 4000 );
         txt_modal.innerText = "connecting..."
     }
   }); 
