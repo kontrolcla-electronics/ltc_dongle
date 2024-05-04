@@ -124,18 +124,11 @@ connect.addEventListener('pointerdown', () => {
         
     }
     else if ( txt_modal.innerText == "Go To Update Mode" )
-    {   window.setTimeout( send_format_timecode_string, 1000 );
-        window.setTimeout( send_goto_updater, 5000 );
+    {   window.setTimeout( send_goto_updater, 2000 );
         txt_modal.innerText = "connecting..."
     }
   }); 
 });
-//*********
-function send_format_timecode_string()
-{   var command = "set_format_timecode=string\r";
-    serial_obj.write( command );
-    console.log ( command );
-}
 //*********
 function send_goto_updater()
 {   var command = "goto_updater\r";
